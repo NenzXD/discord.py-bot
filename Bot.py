@@ -14,11 +14,14 @@ from datetime import datetime
 import ctypes
 
 
+
+TOKEN =""
+
 colorama.init()
 version = "2.4"
 prefix = "?"
 SecondVersion = version
-ctypes.windll.kernel32.SetConsoleTitleW(f'Nenz bot  | Version {version} | Loading...')
+ctypes.windll.kernel32.SetConsoleTitleW(f'Cracked.io bot  | Version {version} | https://cracked.io/MaybeNenz')
 
 determine_flip = [1, 0]
 bot = commands.Bot(command_prefix='?', case_insensitive=True, help_command=None)
@@ -26,13 +29,14 @@ bot = commands.Bot(command_prefix='?', case_insensitive=True, help_command=None)
 @bot.event
 async def on_ready():
     print(f'''{Fore.RESET}{Fore.CYAN}
- ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄   ▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄       ▄▄▄ ▄▄▄▄▄▄▄    
-█       █   ▄  █ █      █       █   █ █ █       █      █     █   █       █   
-█       █  █ █ █ █  ▄   █       █   █▄█ █    ▄▄▄█  ▄    █    █   █   ▄   █   
-█     ▄▄█   █▄▄█▄█ █▄█  █     ▄▄█      ▄█   █▄▄▄█ █ █   █    █   █  █ █  █   
-█    █  █    ▄▄  █      █    █  █     █▄█    ▄▄▄█ █▄█   █▄▄▄ █   █  █▄█  █   
-█    █▄▄█   █  █ █  ▄   █    █▄▄█    ▄  █   █▄▄▄█       █   ██   █       █   
-█▄▄▄▄▄▄▄█▄▄▄█  █▄█▄█ █▄▄█▄▄▄▄▄▄▄█▄▄▄█ █▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄██▄▄▄██▄▄▄█▄▄▄▄▄▄▄█   
+                 ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄   ▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄       ▄▄▄ ▄▄▄▄▄▄▄    
+                █       █   ▄  █ █      █       █   █ █ █       █      █     █   █       █   
+                █       █  █ █ █ █  ▄   █       █   █▄█ █    ▄▄▄█  ▄    █    █   █   ▄   █   
+                █     ▄▄█   █▄▄█▄█ █▄█  █     ▄▄█      ▄█   █▄▄▄█ █ █   █    █   █  █ █  █   
+                █    █  █    ▄▄  █      █    █  █     █▄█    ▄▄▄█ █▄█   █▄▄▄ █   █  █▄█  █   
+                █    █▄▄█   █  █ █  ▄   █    █▄▄█    ▄  █   █▄▄▄█       █   ██   █       █   
+                █▄▄▄▄▄▄▄█▄▄▄█  █▄█▄█ █▄▄█▄▄▄▄▄▄▄█▄▄▄█ █▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄██▄▄▄██▄▄▄█▄▄▄▄▄▄▄█   
+
 
                                                  
 {Fore.BLUE}                                       Logged in as | {Fore.CYAN}{bot.user.name}#{bot.user.discriminator}
@@ -66,6 +70,19 @@ async def logout(ctx):
     await ctx.bot.logout()
     print (Fore.GREEN + f"{client.user.name} has logged out successfully." + Fore.RESET)
 
+
+# Or if you want it to logout when you say it replace that with
+#@bot.command()
+#async def logout(ctx):
+#  if ctx.author.id == discordIDHERE:
+#    await ctx.send('Logging out')
+#    await ctx.bot.logout()
+#    print (Fore.GREEN + f"{client.user.name} has logged out successfully." + Fore.RESET)
+#    await ctx.message.delete()
+#    return
+#  else:
+#    await ctx.send(f"{ctx.message.author.mention} you are not the owner so you cant logout of the bot")
+
 @bot.command(pass_context=True)
 @commands.has_permissions(manage_messages=True)
 
@@ -74,15 +91,6 @@ async def purge(ctx, limit: int):
         await ctx.channel.purge(limit=limit)
         await ctx.send(f'purged {limit} messages')
         await ctx.message.delete()
-
-
-@bot.command()
-@commands.has_permissions(manage_messages=True)
-async def say(ctx, message=None):
-        await ctx.message.delete()
-        bred = discord.Embed(title="BreadBot :D 🍞", description=f"{message}")
-        await ctx.send(embed=bred)
-
 
 
 
@@ -123,7 +131,7 @@ async def userinfo(ctx, member: discord.Member = None):
 
 @bot.command(pass_context=True)
 async def version(ctx):
-        embed = discord.Embed(title="Version | BreadBot :D 🍞", description=f"{ctx.author.mention} Im on version {version}")
+        embed = discord.Embed(title="Version | Cracked.io bot :D ", description=f"{ctx.author.mention} Im on version {version}")
         await ctx.send(embed=embed)
 
 
@@ -227,20 +235,47 @@ async def help(ctx, args=None):
 @bot.command(pass_context=True)
 async def coinflip(ctx):
     if random.choice(determine_flip) == 1:
-        embed = discord.Embed(title="Coinflip | BreadBot :D 🍞", description=f"{ctx.author.mention} Flipped coin, we got **Heads**!")
+        embed = discord.Embed(title="Coinflip | Cracked.io bot :D ", description=f"{ctx.author.mention} Flipped coin, we got **Heads**!")
         await ctx.send(embed=embed)
 
     else:
-        embed = discord.Embed(title="Coinflip | BreadBot :D 🍞", description=f"{ctx.author.mention} Flipped coin, we got **Tails**!")
+        embed = discord.Embed(title="Coinflip | Cracked.io bot :D ", description=f"{ctx.author.mention} Flipped coin, we got **Tails**!")
         await ctx.send(embed=embed)
 
+@bot.command()
+async def ip(ctx, ip: str=None):
+    if ip is None: await ctx.send("Please sepcify an IP address");return
+    else:
+        try:
+            with requests.session() as ses:
+                resp = ses.get(f'https://ipinfo.io/{ip}/json')
+                if "Wrong ip" in resp.text:
+                    await ctx.send("Invalid IP address")
+                    return
+                else:
+                    try:
+                        j = resp.json()
+                        embed= discord.Embed(color=0xff4301, title=f"ip info",timestamp=datetime.utcfromtimestamp(time.time()))
+                        embed.add_field(name=f'IP', value=f'{ip}', inline=True)
+                        embed.add_field(name=f'City', value=f'{j["city"]}', inline=True)
+                        embed.add_field(name=f'Region', value=f'{j["region"]}', inline=True)
+                        embed.add_field(name=f'Country', value=f'{j["country"]}', inline=True)
+                        embed.add_field(name=f'Coordinates', value=f'{j["loc"]}', inline=True)
+                        embed.add_field(name=f'Postal', value=f'{j["postal"]}', inline=True)
+                        embed.add_field(name=f'Timezone', value=f'{j["timezone"]}', inline=True)
+                        embed.set_footer(text=f"Requested by {ctx.author} || HONK  ||Benz")
+                        await ctx.send(embed=embed)
+                    except discord.HTTPException:
+                        await ctx.send(f'**{ip} Info**\n\nCity: {j["city"]}\nRegion: {j["region"]}\nCountry: {j["country"]}\nCoordinates: {j["loc"]}\nPostal: {j["postal"]}\nTimezone: {j["timezone"]}\nOrganization: {j["org"]}')
+        except Exception as e:
+            await ctx.send(f"Error: {e}")
 
 
 
 @bot.command()
 async def serverinfo(ctx):
         guild = ctx.guild
-        embed = discord.Embed(title=f'{guild} Info', description="Coded by Nenz",
+        embed = discord.Embed(title=f'{guild} Info', description="Coded by Benz",
                           timestamp=ctx.message.created_at, color=discord.Color.red())
         embed.set_thumbnail(url=guild.icon_url)
         embed.add_field(name="Number of channels:", value=len(guild.channels))
@@ -279,10 +314,7 @@ async def nuke(ctx, channel: discord.TextChannel = None):
         await ctx.send(f"No channel named {channel.name} was found!")
 
 
-@bot.event
-async def on_member_join(member):
-    await member.create_dm()
-    await member.dm_channel.send(f":bread: yo {member.name}, Welcome! :D:bread: ")
+
 
 
 # Animals
@@ -297,7 +329,7 @@ async def bird(ctx,description="Sends a photo of a bird"):
 
    embed = discord.Embed(title="Birdo", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
    embed.set_image(url=dogjson['link'])
-   embed.set_footer(text="BreadBotNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
+   embed.set_footer(text="Cracked.io bot NSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
    await ctx.send(embed=embed)
 
 @bot.command()
@@ -309,9 +341,9 @@ async def fox(ctx,description="Sends a photo of a Fox"):
       request2 = await session.get('https://some-random-api.ml/facts/fox')
       factjson = await request2.json()
 
-   embed = discord.Embed(title="Foxy🍞", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
+   embed = discord.Embed(title="Foxy", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
    embed.set_image(url=dogjson['link'])
-   embed.set_footer(text="BreadBotNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
+   embed.set_footer(text="Cracked.io botNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
    await ctx.send(embed=embed)
 
 @bot.command()
@@ -323,9 +355,9 @@ async def panda(ctx,description="Sends a photo of a Panda"):
       request2 = await session.get('https://some-random-api.ml/facts/panda')
       factjson = await request2.json()
 
-   embed = discord.Embed(title="Panda!🍞", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
+   embed = discord.Embed(title="Panda!", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
    embed.set_image(url=dogjson['link'])
-   embed.set_footer(text="BreadBotNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
+   embed.set_footer(text="Cracked.io botNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
    await ctx.send(embed=embed)
 
 
@@ -338,9 +370,9 @@ async def cat(ctx,description="Sends a photo of a Cat"):
       request2 = await session.get('https://some-random-api.ml/facts/cat')
       factjson = await request2.json()
 
-   embed = discord.Embed(title="Cat🍞", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
+   embed = discord.Embed(title="Cat", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
    embed.set_image(url=dogjson['link'])
-   embed.set_footer(text="BreadBotNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
+   embed.set_footer(text="Cracked.io botNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
    await ctx.send(embed=embed)
 
 @bot.command()
@@ -352,9 +384,9 @@ async def dog(ctx,description="Sends a photo of a Dog"):
       request2 = await session.get('https://some-random-api.ml/facts/dog')
       factjson = await request2.json()
 
-   embed = discord.Embed(title="Doggo🍞", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
+   embed = discord.Embed(title="Doggo", icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024', color=discord.Color.purple())
    embed.set_image(url=dogjson['link'])
-   embed.set_footer(text="BreadBotNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
+   embed.set_footer(text="Cracked.io botNSFW",icon_url='https://cdn.discordapp.com/avatars/816932049284890655/d80e9c79176998c8d22af2d59d59084e.png?size=1024')
    await ctx.send(embed=embed)
 
-bot.run("TOKEN HERE")
+bot.run(TOKEN)
