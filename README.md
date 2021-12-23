@@ -12,7 +12,7 @@ Once you have done that open the Bot.py file in notepad And scroll all the way d
 
 Anybody is free to use this as long as you give some form of credit :D	
 
-
+Ill be working on this bot more
 
 
 24/7 hosting?
