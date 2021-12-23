@@ -1,3 +1,4 @@
+
 import discord, datetime, time, asyncio, os, json, random, requests, aiohttp, nekos, io, sys
 import colorama
 from discord.ext import commands
@@ -24,24 +25,26 @@ bot = commands.Bot(command_prefix='?', case_insensitive=True, help_command=None)
 
 @bot.event
 async def on_ready():
-    print(f'''{Fore.RESET}{Fore.MAGENTA}
-                         ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄▄▄     ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ 
-                        █  ▄    █   ▄  █ █       █      █      █   █  ▄    █       █       █
-                        █ █▄█   █  █ █ █ █    ▄▄▄█  ▄   █  ▄    █  █ █▄█   █   ▄   █▄     ▄█
-                        █       █   █▄▄█▄█   █▄▄▄█ █▄█  █ █ █   █  █       █  █ █  █ █   █  
-                        █  ▄   ██    ▄▄  █    ▄▄▄█      █ █▄█   █  █  ▄   ██  █▄█  █ █   █  
-                        █ █▄█   █   █  █ █   █▄▄▄█  ▄   █       █  █ █▄█   █       █ █   █  
-                        █▄▄▄▄▄▄▄█▄▄▄█  █▄█▄▄▄▄▄▄▄█▄█ █▄▄█▄▄▄▄▄▄█   █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█ █▄▄▄█  
-                                                                         
+    print(f'''{Fore.RESET}{Fore.CYAN}
+ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄   ▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄   ▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄       ▄▄▄ ▄▄▄▄▄▄▄    
+█       █   ▄  █ █      █       █   █ █ █       █      █     █   █       █   
+█       █  █ █ █ █  ▄   █       █   █▄█ █    ▄▄▄█  ▄    █    █   █   ▄   █   
+█     ▄▄█   █▄▄█▄█ █▄█  █     ▄▄█      ▄█   █▄▄▄█ █ █   █    █   █  █ █  █   
+█    █  █    ▄▄  █      █    █  █     █▄█    ▄▄▄█ █▄█   █▄▄▄ █   █  █▄█  █   
+█    █▄▄█   █  █ █  ▄   █    █▄▄█    ▄  █   █▄▄▄█       █   ██   █       █   
+█▄▄▄▄▄▄▄█▄▄▄█  █▄█▄█ █▄▄█▄▄▄▄▄▄▄█▄▄▄█ █▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄██▄▄▄██▄▄▄█▄▄▄▄▄▄▄█   
+
                                                  
 {Fore.BLUE}                                       Logged in as | {Fore.CYAN}{bot.user.name}#{bot.user.discriminator}
 {Fore.BLUE}                                             Prefix | {Fore.CYAN}{prefix}
 {Fore.BLUE}                                             Version| {Fore.CYAN}{version}
-{Fore.BLUE}                                                   Made by Nenz
+{Fore.BLUE}                                              Made by Benz
   
     '''+Fore.RESET)
 
-    ctypes.windll.kernel32.SetConsoleTitleW(f'Nenz  bot  | Version {SecondVersion} |  {bot.user.name}#{bot.user.discriminator} ')
+    ctypes.windll.kernel32.SetConsoleTitleW(f'Benz {bot.user.name}  | Version {SecondVersion} |  {bot.user.name}#{bot.user.discriminator}')
+    activity = discord.Game(name="Watching you sleep ", type=3)
+    await bot.change_presence(status=discord.Status.online, activity=activity)
 
 
 @bot.command()
