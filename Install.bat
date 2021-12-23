@@ -1,5 +1,4 @@
 echo off
-cd Desktop\Youtube bot
 color 3
 cls
 
